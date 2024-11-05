@@ -45,6 +45,7 @@ public class SpringSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth").permitAll()
                         .requestMatchers(DOCUMENTATION_OPENAPI).permitAll()
+                        .requestMatchers("/ping").permitAll()
                         .anyRequest().authenticated()
                 ).sessionManagement(
                         session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
